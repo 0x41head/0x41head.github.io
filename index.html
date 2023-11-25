@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<style>
+body{
+  background-color:black;
+  margin: 0px;
+}
+
+.word{
+  font-size: 7vw;
+  font-family: "Rubik", sans-serif
+}
+.container{
+
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center; /* Horizontal alignment */
+  align-items: center; /* Vertical alignment */
+  height: 100vh; /* Adjust as needed */
+
+}
+.text{
+  border-style: solid;
+  border-color: coral;
+  padding-left:20.5%;
+  padding-right:20.5%;
+  color:white;
+  align-items: center;
+  width: 100%;
+}
+
+.line {
+  display:flex;
+  justify-content:space-between;
+}
+
+a{
+  color:white;
+  text-decoration:none;
+}
+
+.cool> .letter {
+  display: inline-block;
+  transition: transform 550ms ease ;
+}
+
+.cool:hover> .letter {
+  transition-duration: 800ms;
+}
+
+.cool:hover > .letter:nth-child(1) {
+  transform: translate(-55%,-20%) rotate(5deg);
+}
+.cool:hover > .letter:nth-child(2) {
+  transform: translate(0%,10%) rotate(8deg);
+}
+.cool:hover > .letter:nth-child(3) {
+  transform: translate(0%,-30%) rotate(-10deg);
+}
+.cool:hover > .letter:nth-child(4) {
+  transform: translate(0%,30%) rotate(5deg);
+}
+.cool:hover > .letter:nth-child(5) {
+  transform: translate(0%,-10%) rotate(3deg);
+}
+.cool:hover > .letter:nth-child(6) {
+  transform: translate(10%,15%) rotate(-12deg);
+}
+.cool:hover > .letter:nth-child(7) {
+  transform: translate(20%,-35%) rotate(25deg);
+}
+.cool:hover > .letter:nth-child(8) {
+  transform: translate(10%,-35%) rotate(-20deg);
+}
+.cool:hover > .letter:nth-child(9) {
+  transform: translate(0%,-10%) rotate(10deg);
+}
+.cool:hover > .letter:nth-child(10) {
+  transform: translate(0%,20%) rotate(-8deg);
+}
+.cool:hover > .letter:nth-child(11) {
+  transform: translate(0%,35%) rotate(15deg);
+}
+
+</style>
+</head>
+<body>
+
+<div class="container">
+  <div class="text">
+    <div class="line">
+      <div class="word">Aryan</div>
+      <div class="word">Prasad</div>
+    </div>
+   <div class="line">
+      <a 
+         id="channel-link" 
+         href="https://youtube.com/@hyperplexed" 
+         target="_blank" 
+         class="word cool"
+      >
+        Blogging
+      </a>
+      <div class="word">&</div>
+    </div>
+    <div class="line">
+        <a 
+           id="channel" 
+           href="https://youtube.com/@hyperplexed" 
+           target="_blank" 
+           class="word cool"
+        >
+          Developing
+        </a>
+      <div class="word">:}</div>
+    </div>
+    <div class="line">
+       <a 
+         id="github" 
+         href="https://youtube.com/@hyperplexed" 
+         target="_blank" 
+         class="word cool"
+      >
+       *Github
+      </a>
+      <a 
+         id="CV" 
+         href="https://youtube.com/@hyperplexed" 
+         target="_blank" 
+         class="word cool"
+      >
+        *CV
+      </a>  
+    </div>
+  </div>
+</div>
+</body>
+<script>
+$(document).ready(function() {
+      // sets opacity of different 
+      $('.cool').hover(function() {
+        $('.word').not($(this)).css('opacity', '0.1');
+      }, function() {
+        $('.word').css('opacity', '1');
+      });
+    });
+
+const magicWords = id => {
+  const element = document.getElementById(id),
+        text = element.innerText.split("");
+  
+  element.innerText = "";
+  
+  text.forEach((value, index) => {
+    const letter = document.createElement("span");
+    letter.className = "letter";
+    letter.innerText = value;
+    element.appendChild(letter)
+  });
+}
+magicWords("channel-link");
+magicWords("channel");
+magicWords("github");
+magicWords("CV");
+</script>
+</html>
