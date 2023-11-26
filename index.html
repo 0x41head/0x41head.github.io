@@ -3,6 +3,15 @@
 <head>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 <style>
+:root {
+  --gradient: linear-gradient(90deg, #ee6352, purple, #ee6352);
+
+}
+@keyframes bg-animation {
+  0% {background-position: left}
+  50% {background-position: right}
+  100% {background-position: left}
+}
 body{
   background-color:black;
   margin: 0px;
@@ -10,23 +19,21 @@ body{
 
 .word{
   font-size: 7vw;
-  font-family: "Rubik", sans-serif
+  font-family: Helvetica, sans-serif
 }
 .container{
 
   top: 0;
   left: 0;
   display: flex;
-  justify-content: center; /* Horizontal alignment */
-  align-items: center; /* Vertical alignment */
-  height: 100vh; /* Adjust as needed */
+  justify-content: center; 
+  align-items: center; 
+  height: 100vh; 
 
 }
 .text{
-  border-style: solid;
-  border-color: coral;
-  padding-left:20.5%;
-  padding-right:20.5%;
+  padding-left:25.5%;
+  padding-right:25.5%;
   color:white;
   align-items: center;
   width: 100%;
@@ -45,13 +52,19 @@ a{
 .cool> .letter {
   display: inline-block;
   transition: transform 550ms ease ;
-}
+  background-size: 200%;
+  }
 
+.cool:hover{
+  background-size: 300%;
+  background-image: var(--gradient);
+  animation: bg-animation 25s infinite;
+}
 .cool:hover> .letter {
   transition-duration: 800ms;
 }
 
-.cool:hover > .letter:nth-child(1) {
+.cool:hover > .github:nth-child(1) {
   transform: translate(-55%,-20%) rotate(5deg);
 }
 .cool:hover > .letter:nth-child(2) {
@@ -120,7 +133,7 @@ a{
     <div class="line">
        <a 
          id="github" 
-         href="https://youtube.com/@hyperplexed" 
+         href="https://github.com/0x41head/" 
          target="_blank" 
          class="word cool"
       >
@@ -156,7 +169,7 @@ const magicWords = id => {
   
   text.forEach((value, index) => {
     const letter = document.createElement("span");
-    letter.className = "letter";
+    letter.className = "letter "+id;
     letter.innerText = value;
     element.appendChild(letter)
   });
