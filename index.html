@@ -3,18 +3,18 @@
 <head>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 <style>
-:root {
-  --gradient: linear-gradient(90deg, #ee6352, purple, #ee6352);
-
-}
-@keyframes bg-animation {
-  0% {background-position: left}
-  50% {background-position: right}
-  100% {background-position: left}
-}
 body{
   background-color:black;
   margin: 0px;
+}
+@keyframes float {
+  from, to {
+    transform: translateY(-0%);
+  }
+  
+  50% {    
+    transform: translateY(-3%);
+  }
 }
 
 .word{
@@ -53,49 +53,92 @@ a{
   display: inline-block;
   transition: transform 550ms ease ;
   background-size: 200%;
-  }
-
-.cool:hover{
-  background-size: 300%;
-  background-image: var(--gradient);
-  animation: bg-animation 25s infinite;
 }
+
 .cool:hover> .letter {
   transition-duration: 800ms;
 }
 
-.cool:hover > .github:nth-child(1) {
+.cool:hover > .email:nth-child(1) {
   transform: translate(-55%,-20%) rotate(5deg);
 }
-.cool:hover > .letter:nth-child(2) {
+.cool:hover > .email:nth-child(2) {
   transform: translate(0%,10%) rotate(8deg);
 }
-.cool:hover > .letter:nth-child(3) {
+.cool:hover > .email:nth-child(3) {
   transform: translate(0%,-30%) rotate(-10deg);
 }
-.cool:hover > .letter:nth-child(4) {
+.cool:hover > .email:nth-child(4) {
   transform: translate(0%,30%) rotate(5deg);
 }
-.cool:hover > .letter:nth-child(5) {
+.cool:hover > .email:nth-child(5) {
   transform: translate(0%,-10%) rotate(3deg);
 }
-.cool:hover > .letter:nth-child(6) {
+.cool:hover > .email:nth-child(6) {
   transform: translate(10%,15%) rotate(-12deg);
 }
-.cool:hover > .letter:nth-child(7) {
-  transform: translate(20%,-35%) rotate(25deg);
+.cool:hover > .CV:nth-child(1) {
+  transform: translate(10%,50%) rotate(-5deg);
 }
-.cool:hover > .letter:nth-child(8) {
-  transform: translate(10%,-35%) rotate(-20deg);
-}
-.cool:hover > .letter:nth-child(9) {
+.cool:hover > .CV:nth-child(2) {
   transform: translate(0%,-10%) rotate(10deg);
 }
-.cool:hover > .letter:nth-child(10) {
+.cool:hover > .CV:nth-child(3) {
+  transform: translate(10%,20%) rotate(-8deg);
+}
+.cool:hover > .blogging:nth-child(1) {
+  transform: translate(-55%,-20%) rotate(5deg);
+}
+.cool:hover > .blogging:nth-child(2) {
+  transform: translate(0%,10%) rotate(8deg);
+}
+.cool:hover > .blogging:nth-child(3) {
+  transform: translate(0%,-30%) rotate(-10deg);
+}
+.cool:hover > .blogging:nth-child(4) {
+  transform: translate(0%,30%) rotate(5deg);
+}
+.cool:hover > .blogging:nth-child(5) {
+  transform: translate(0%,-10%) rotate(3deg);
+}
+.cool:hover > .blogging:nth-child(6) {
+  transform: translate(10%,15%) rotate(-12deg);
+}
+.cool:hover > .blogging:nth-child(7) {
+  transform: translate(10%,50%) rotate(-5deg);
+}
+.cool:hover > .blogging:nth-child(8) {
+  transform: translate(0%,-10%) rotate(10deg);
+}
+.cool:hover > .developing:nth-child(1) {
+  transform: translate(0%,30%) rotate(-22deg);
+}
+.cool:hover > .developing:nth-child(2) {
+  transform: translate(0%,-10%) rotate(8deg);
+}
+.cool:hover > .developing:nth-child(3) {
   transform: translate(0%,20%) rotate(-8deg);
 }
-.cool:hover > .letter:nth-child(11) {
-  transform: translate(0%,35%) rotate(15deg);
+.cool:hover > .developing:nth-child(4) {
+  transform: translate(10%,50%) rotate(-5deg);
+}
+.cool:hover > .developing:nth-child(5) {
+  transform: translate(10%,15%) rotate(-12deg);
+}
+.cool:hover > .developing:nth-child(6) {
+  transform: translate(0%,-10%) rotate(3deg);
+}
+.cool:hover > .developing:nth-child(7) {
+  transform: translate(0%,30%) rotate(5deg);
+}
+.cool:hover > .developing:nth-child(8) {
+  transform: translate(0%,-30%) rotate(-10deg);
+}
+.cool:hover > .developing:nth-child(9) {
+  transform: translate(0%,10%) rotate(8deg);
+}
+.cool:hover > .developing:nth-child(10) {
+  transform: translate(35%,-20%) rotate(5deg);
 }
 
 </style>
@@ -110,8 +153,8 @@ a{
     </div>
    <div class="line">
       <a 
-         id="channel-link" 
-         href="https://youtube.com/@hyperplexed" 
+         id="blogging" 
+         href="https://github.com/0x41head/" 
          target="_blank" 
          class="word cool"
       >
@@ -121,8 +164,8 @@ a{
     </div>
     <div class="line">
         <a 
-           id="channel" 
-           href="https://youtube.com/@hyperplexed" 
+           id="developing" 
+           href="https://github.com/0x41head/" 
            target="_blank" 
            class="word cool"
         >
@@ -132,16 +175,16 @@ a{
     </div>
     <div class="line">
        <a 
-         id="github" 
-         href="https://github.com/0x41head/" 
+         id="email" 
+         href="mailto:aprasad1617@gmail.com" 
          target="_blank" 
          class="word cool"
       >
-       *Github
+       *Email
       </a>
       <a 
          id="CV" 
-         href="https://youtube.com/@hyperplexed" 
+         href="" 
          target="_blank" 
          class="word cool"
       >
@@ -174,9 +217,9 @@ const magicWords = id => {
     element.appendChild(letter)
   });
 }
-magicWords("channel-link");
-magicWords("channel");
-magicWords("github");
+magicWords("blogging");
+magicWords("developing");
+magicWords("email");
 magicWords("CV");
 </script>
 </html>
