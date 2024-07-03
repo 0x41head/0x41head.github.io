@@ -4,125 +4,203 @@
     <title>{:0x41head:}</title>
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
       <style>
-         body{
-         background-color:black;
-         margin: 0px;
+         :root {
+            --light_blue: #0fb6bf;
+            --dark_blue: #095468;
+            --purple: #736cb5;
          }
-         .word{
-         font-size: 7vw;
-         font-family: Helvetica, sans-serif
+
+         body {
+            background-color: black;
+            margin: 0px;
          }
-         .container{
-         top: 0;
-         left: 0;
-         display: flex;
-         justify-content: center; 
-         align-items: center; 
-         height: 100vh; 
+
+         .word {
+            font-size: 7vw;
+            font-family: Helvetica, sans-serif
          }
-         .text{
-         padding-left:25.5%;
-         padding-right:25.5%;
-         color:white;
-         align-items: center;
-         width: 100%;
+
+         .container {
+            top: 0;
+            left: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
          }
+
+         .text {
+            padding-left: 25.5%;
+            padding-right: 25.5%;
+            color: white;
+            align-items: center;
+            width: 100%;
+         }
+
          .line {
-         display:flex;
-         justify-content:space-between;
+            display: flex;
+            justify-content: space-between;
          }
-         a{
-         color:white;
-         text-decoration:none;
+
+         a {
+            color: white;
+            text-decoration: none;
          }
-         .cool> .letter {
-         display: inline-block;
-         transition: transform 550ms ease ;
-         background-size: 200%;
+
+         .cool>.transition_class {
+            display: inline-block;
+            transition: transform 550ms ease;
+            background-size: 200%;
          }
-         .cool:hover> .letter {
-         transition-duration: 800ms;
+
+         .cool:hover>.transition_class {
+            transition-duration: 800ms;
          }
-         .cool:hover > .email:nth-child(1) {
-         transform: translate(-55%,-20%) rotate(5deg);
+
+         .cool:hover>.transition_class>.floating_animation_class {
+            display: inline-block;
+            animation: float 2s infinite alternate;
+            animation-direction: alternate;
          }
-         .cool:hover > .email:nth-child(2) {
-         transform: translate(0%,10%) rotate(8deg);
+
+         @keyframes float {
+            from {
+               transform: translateY(-0%)
+            }
+
+            to {
+               transform: translateY(-8%)
+            }
          }
-         .cool:hover > .email:nth-child(3) {
-         transform: translate(0%,-30%) rotate(-10deg);
+
+         .cool:hover>.transition_class>.floating_animation_class>.letter {
+            background: linear-gradient(var(--dark_blue),
+                  var(--light_blue),
+                  var(--purple),
+                  var(--dark_blue));
+            background-size: 1000% 1000%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: gradient 60s linear infinite alternate;
+            animation-direction: alternate;
          }
-         .cool:hover > .email:nth-child(4) {
-         transform: translate(0%,30%) rotate(5deg);
+
+         @keyframes gradient {
+            from {
+               background-position: 1000% bottom;
+            }
+
+            to {
+               background-position: 0% top;
+            }
          }
-         .cool:hover > .email:nth-child(5) {
-         transform: translate(0%,-10%) rotate(3deg);
+
+         .cool:hover>.blogging:nth-child(1) {
+            transform: translate(-55%, -20%) rotate(5deg);
          }
-         .cool:hover > .email:nth-child(6) {
-         transform: translate(10%,15%) rotate(-12deg);
+
+         .cool:hover>.blogging:nth-child(2) {
+            transform: translate(-70%, 10%) rotate(8deg);
          }
-         .cool:hover > .CV:nth-child(1) {
-         transform: translate(10%,50%) rotate(-5deg);
+
+         .cool:hover>.blogging:nth-child(3) {
+            transform: translate(0%, -30%) rotate(-10deg);
          }
-         .cool:hover > .CV:nth-child(2) {
-         transform: translate(0%,-10%) rotate(10deg);
+
+         .cool:hover>.blogging:nth-child(4) {
+            transform: translate(0%, 30%) rotate(5deg);
          }
-         .cool:hover > .CV:nth-child(3) {
-         transform: translate(10%,20%) rotate(-8deg);
+
+         .cool:hover>.blogging:nth-child(5) {
+            transform: translate(0%, -10%) rotate(3deg);
          }
-         .cool:hover > .blogging:nth-child(1) {
-         transform: translate(-55%,-20%) rotate(5deg);
+
+         .cool:hover>.blogging:nth-child(6) {
+            transform: translate(10%, 50%) rotate(-12deg);
          }
-         .cool:hover > .blogging:nth-child(2) {
-         transform: translate(-70%,10%) rotate(8deg);
+
+         .cool:hover>.blogging:nth-child(7) {
+            transform: translate(-8%, -35%) rotate(-5deg);
          }
-         .cool:hover > .blogging:nth-child(3) {
-         transform: translate(0%,-30%) rotate(-10deg);
+
+         .cool:hover>.blogging:nth-child(8) {
+            transform: translate(0%, -20%) rotate(10deg);
          }
-         .cool:hover > .blogging:nth-child(4) {
-         transform: translate(0%,30%) rotate(5deg);
+
+         .cool:hover>.email:nth-child(1) {
+            transform: translate(-55%, -20%) rotate(5deg);
          }
-         .cool:hover > .blogging:nth-child(5) {
-         transform: translate(0%,-10%) rotate(3deg);
+
+         .cool:hover>.email:nth-child(2) {
+            transform: translate(10%, 10%) rotate(8deg);
          }
-         .cool:hover > .blogging:nth-child(6) {
-         transform: translate(10%,15%) rotate(-12deg);
+
+         .cool:hover>.email:nth-child(3) {
+            transform: translate(50%, -30%) rotate(-10deg);
          }
-         .cool:hover > .blogging:nth-child(7) {
-         transform: translate(10%,50%) rotate(-5deg);
+
+         .cool:hover>.email:nth-child(4) {
+            transform: translate(20%, 30%) rotate(5deg);
          }
-         .cool:hover > .blogging:nth-child(8) {
-         transform: translate(0%,-20%) rotate(10deg);
+
+         .cool:hover>.email:nth-child(5) {
+            transform: translate(0%, -10%) rotate(3deg);
          }
-         .cool:hover > .developing:nth-child(1) {
-         transform: translate(0%,30%) rotate(-22deg);
+
+         .cool:hover>.email:nth-child(6) {
+            transform: translate(70%, 15%) rotate(-12deg);
          }
-         .cool:hover > .developing:nth-child(2) {
-         transform: translate(0%,-10%) rotate(8deg);
+
+         .cool:hover>.CV:nth-child(1) {
+            transform: translate(10%, 50%) rotate(-5deg);
          }
-         .cool:hover > .developing:nth-child(3) {
-         transform: translate(0%,20%) rotate(-8deg);
+
+         .cool:hover>.CV:nth-child(2) {
+            transform: translate(0%, -10%) rotate(10deg);
          }
-         .cool:hover > .developing:nth-child(4) {
-         transform: translate(10%,50%) rotate(-5deg);
+
+         .cool:hover>.CV:nth-child(3) {
+            transform: translate(10%, 20%) rotate(-8deg);
          }
-         .cool:hover > .developing:nth-child(5) {
-         transform: translate(10%,15%) rotate(-12deg);
+
+         .cool:hover>.developing:nth-child(1) {
+            transform: translate(0%, 30%) rotate(-22deg);
          }
-         .cool:hover > .developing:nth-child(6) {
-         transform: translate(0%,-10%) rotate(3deg);
+
+         .cool:hover>.developing:nth-child(2) {
+            transform: translate(0%, -10%) rotate(8deg);
          }
-         .cool:hover > .developing:nth-child(7) {
-         transform: translate(0%,30%) rotate(5deg);
+
+         .cool:hover>.developing:nth-child(3) {
+            transform: translate(0%, 20%) rotate(-8deg);
          }
-         .cool:hover > .developing:nth-child(8) {
-         transform: translate(0%,-30%) rotate(-10deg);
+
+         .cool:hover>.developing:nth-child(4) {
+            transform: translate(10%, 50%) rotate(-5deg);
          }
-         .cool:hover > .developing:nth-child(9) {
-         transform: translate(0%,10%) rotate(8deg);
+
+         .cool:hover>.developing:nth-child(5) {
+            transform: translate(10%, 15%) rotate(-12deg);
          }
-         .cool:hover > .developing:nth-child(10) {
-         transform: translate(35%,-20%) rotate(5deg);
+
+         .cool:hover>.developing:nth-child(6) {
+            transform: translate(0%, -10%) rotate(3deg);
+         }
+
+         .cool:hover>.developing:nth-child(7) {
+            transform: translate(0%, 30%) rotate(5deg);
+         }
+
+         .cool:hover>.developing:nth-child(8) {
+            transform: translate(0%, -30%) rotate(-10deg);
+         }
+
+         .cool:hover>.developing:nth-child(9) {
+            transform: translate(0%, 10%) rotate(8deg);
+         }
+
+         .cool:hover>.developing:nth-child(10) {
+            transform: translate(35%, -20%) rotate(5deg);
          }
       </style>
    </head>
@@ -177,6 +255,8 @@
       </div>
    </body>
    <script>
+      const randomAnimationDelay = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
+
       $(document).ready(function() {
             // sets opacity of different 
             $('.cool').hover(function() {
@@ -193,10 +273,17 @@
         element.innerText = "";
         
         text.forEach((value, index) => {
-          const letter = document.createElement("span");
-          letter.className = "letter "+id;
-          letter.innerText = value;
-          element.appendChild(letter)
+         const transition_class = document.createElement("span");
+         transition_class.className = "transition_class " + id;
+         const floating_animation_class = document.createElement("span");
+         floating_animation_class.className = "floating_animation_class";
+         floating_animation_class.style.animationDelay = `${randomAnimationDelay(-5000, 0)}ms`;
+         const letter = document.createElement("span");
+         letter.className = "letter";
+         letter.innerText = value;
+         floating_animation_class.appendChild(letter)
+         transition_class.appendChild(floating_animation_class)
+         element.appendChild(transition_class)
         });
       }
       magicWords("blogging");
